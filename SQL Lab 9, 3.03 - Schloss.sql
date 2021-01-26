@@ -8,7 +8,8 @@ on a1.actor_id = fa1.actor_id
 join film_actor fa2
 on (fa1.film_id = fa2.film_id) and (fa1.actor_id != fa2.actor_id)
 join actor a2
-on a2.actor_id = fa2.actor_id;
+on a2.actor_id = fa2.actor_id
+where fa2.actor_id > fa1.actor_id;
 
 -- Q1 testing inner join function, same result
 select fa1.film_id, concat(a1.first_name, ' ', a1.last_name) actor_1, concat(a2.first_name, ' ', a2.last_name) actor_2
